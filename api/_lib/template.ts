@@ -121,6 +121,34 @@ export function getHtml(parsedReq: ParsedRequest) {
 </html>`;
 }
 
+export function getHtml2(parsedReq: ParsedRequest) {
+     const { text, theme, md, fontSize, images, widths, heights } = parsedReq;
+     return `<!DOCTYPE html>
+ <html>
+     <meta charset="utf-8">
+     <title>Generated Image</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <style>
+         ${getCss(theme, fontSize)}
+     </style>
+     <body>
+         <div>
+             <div class="spacer">
+             <div class="logo-wrapper">
+                 ${images.map((img, i) =>
+                     getPlusSign(i) + getImage(img, widths[i], heights[i])
+                 ).join('')}
+             </div>
+             <div class="spacer">
+             <div class="heading">${emojify(
+                 md ? marked(text) : sanitizeHtml(text)
+             )}
+             </div>
+         </div>
+     </body>
+ </html>`;
+ }
+
 function getImage(src: string, width ='auto', height = '225') {
     return `<img
         class="logo"
