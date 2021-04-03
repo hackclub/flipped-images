@@ -115,7 +115,9 @@ export function getHtml(parsedReq: ParsedRequest) {
     </style>
     <body>
         <div>
-            <img src="${sanitizeHtml(images[0]['src'])}" height="100vh" width="100vw" style="object-fit: cover" />
+                ${images.map((img, i) =>
+                     '<img src="${sanitizeHtml(src)}" height="100vh" width="100vw" style="object-fit: cover" />'
+                 ).join('')}
         </div>
     </body>
 </html>`;
