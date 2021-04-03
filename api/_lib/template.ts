@@ -49,6 +49,9 @@ function getCss(theme: string, fontSize: string) {
         text-align: center;
         align-items: center;
         justify-content: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transform: rotate(180deg)
     }
 
     code {
