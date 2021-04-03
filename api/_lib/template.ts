@@ -70,6 +70,7 @@ function getCss(theme: string, fontSize: string) {
       width: 100vw;
       background-repeat: no-repeat;
       background-size: cover;
+      background-position: center;
     }
 
     
