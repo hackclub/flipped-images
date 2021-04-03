@@ -44,9 +44,6 @@ function getCss(theme: string, fontSize: string) {
       }
 
     body {
-        background: ${background};
-        background-image: radial-gradient(circle at 25px 25px, ${radial} 2%, transparent 0%), radial-gradient(circle at 75px 75px, ${radial} 2%, transparent 0%);
-        background-size: 100px 100px;
         height: 100vh;
         display: flex;
         text-align: center;
@@ -65,17 +62,7 @@ function getCss(theme: string, fontSize: string) {
         content: '\`';
     }
 
-    .logo-wrapper {
-        display: flex;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-        justify-items: center;
-    }
-
-    .logo {
-        margin: 0 75px;
-    }
+    
 
     .plus {
         color: #BBB;
@@ -113,12 +100,8 @@ export function getHtml(parsedReq: ParsedRequest) {
     <style>
         ${getCss(theme, fontSize)}
     </style>
-    <body>
+    <body style='background-image: url("${sanitizeHtml(img)}")'>
         <div>
-                ${images.map((img) =>
-                     `<img src="${sanitizeHtml(img)}" height="100vh" width="100vw" style="object-fit: cover" />`
-                 ).join('')}
-        </div>
     </body>
 </html>`;
 }
