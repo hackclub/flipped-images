@@ -95,6 +95,18 @@ function getCss(theme: string, fontSize: string) {
 
 export function getHtml(parsedReq: ParsedRequest) {
     const { text, theme, md, fontSize, images, widths, heights } = parsedReq;
+    console.log(`<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <title>Generated Image</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        ${getCss(theme, fontSize)}
+    </style>
+    <body style='background-image: url("${sanitizeHtml(images[0])}")'>
+        <div>
+    </body>
+</html>`)
     return `<!DOCTYPE html>
 <html>
     <meta charset="utf-8">
