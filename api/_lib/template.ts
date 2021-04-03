@@ -65,6 +65,13 @@ function getCss(theme: string, fontSize: string) {
         content: '\`';
     }
 
+    div{
+      height: 100vh;
+      width: 100vw;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
     
 
     .plus {
@@ -115,8 +122,9 @@ export function getHtml(parsedReq: ParsedRequest) {
     <style>
         ${getCss(theme, fontSize)}
     </style>
-    <body style='background-image: url("${sanitizeHtml(images[0])}")'>
-        <div>
+    <body >
+        <div style='background-image: url("${sanitizeHtml(images[0])}")'>
+</div>
     </body>
 </html>`;
 }
