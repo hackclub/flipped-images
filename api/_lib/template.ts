@@ -110,7 +110,7 @@ export function getHtml(parsedReq: ParsedRequest) {
     <style>
         ${getCss(theme, fontSize)}
     </style>
-    <body style='background-image: url("${sanitizeHtml(images[0])}")'>
+    <body style='background-image: url("${sanitizeHtml(images[1] ? images[1] : images[0])}")'>
         <div>
     </body>
 </html>`)
