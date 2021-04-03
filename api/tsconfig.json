@@ -10,7 +10,7 @@
         "noFallthroughCasesInSwitch": true,
         "noImplicitReturns": true,
         "noEmitOnError": true,
-        "noUnusedLocals": true,
+        "noUnusedLocals": false,
         "noUnusedParameters": true,
         "removeComments": true,
         "preserveConstEnums": true,
